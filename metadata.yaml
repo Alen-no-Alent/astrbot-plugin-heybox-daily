@@ -1,0 +1,6 @@
+name: astrbot_plugin_heybox_daily
+display_name: 小黑盒闲逛
+desc: 夜间时间窗里连逛一小时小黑盒，只把觉得有趣的用自己的话讲给爸爸听（含有趣评论），记忆保留两天；支持扫码登录与喜好分区加权
+version: v0.4.0
+author: 汤圆定制
+repo: https://github.com/AaronZ345/xiaoheihe-cli
