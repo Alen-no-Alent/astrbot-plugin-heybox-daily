@@ -1,0 +1,123 @@
+{
+  "login_hint": {
+    "description": "扫码登录说明（保存配置后，发 /小黑盒扫码 即可让机器人发二维码给你扫；插件启动时若没登录也会自动发一次）",
+    "type": "string",
+    "default": "在聊天里发 /小黑盒扫码 获取二维码；扫完以后正文和评论都能读到。"
+  },
+  "auto_login_qr": {
+    "description": "启动时若未登录，是否自动往推送目标发一次登录二维码",
+    "type": "bool",
+    "default": true
+  },
+  "preferred_topics": {
+    "description": "喜好的分区/话题关键词（命中后更容易被分享，如：影之刃零、Steam、单机游戏、桌游）",
+    "type": "list",
+    "default": []
+  },
+  "preferred_boost": {
+    "description": "命中喜好时的热度加权倍数（1.0 表示不加权）",
+    "type": "float",
+    "default": 1.6
+  },
+  "preferred_threshold_discount": {
+    "description": "命中喜好时分摊门槛的降低量（0-3，例如 1.5 就是 6 分降到 4.5 分）",
+    "type": "float",
+    "default": 1.5
+  },
+  "enabled": {
+    "description": "是否开启定时闲逛",
+    "type": "bool",
+    "default": true
+  },
+  "window_start": {
+    "description": "允许开始闲逛的时间窗起点（HH:MM，本地时区）",
+    "type": "string",
+    "default": "18:00"
+  },
+  "window_end": {
+    "description": "时间窗终点（HH:MM，可跨零点）。逛满 session_minutes 后会在这个点之前停下。",
+    "type": "string",
+    "default": "09:00"
+  },
+  "session_minutes": {
+    "description": "一次闲逛持续多少分钟（逛够就停，不是刷够几条）",
+    "type": "int",
+    "default": 60
+  },
+  "interval_minutes": {
+    "description": "翻两屏之间的间隔（分钟，区间随机）",
+    "type": "list",
+    "default": [
+      4,
+      9
+    ]
+  },
+  "interest_threshold": {
+    "description": "有趣程度门槛（0-10，低于这个分数就不分享）",
+    "type": "float",
+    "default": 6.0
+  },
+  "judge_batch": {
+    "description": "每次让她看几条再决定分不分享",
+    "type": "int",
+    "default": 5
+  },
+  "memory_days": {
+    "description": "帖子记忆保留几天（这期间看过的不再分享，过期后可以重新出现）",
+    "type": "float",
+    "default": 2.0
+  },
+  "fetch_comments": {
+    "description": "是否读热门评论（需要小黑盒登录，未登录会自动跳过）",
+    "type": "bool",
+    "default": true
+  },
+  "comment_limit": {
+    "description": "每次读多少条热门评论",
+    "type": "int",
+    "default": 8
+  },
+  "send_image": {
+    "description": "是否带帖子首图",
+    "type": "bool",
+    "default": true
+  },
+  "target_umos": {
+    "description": "推送目标 UMO 列表",
+    "type": "list",
+    "default": [],
+    "hint": "格式：<平台实例>:<消息类型>:<会话ID>，例如 snowluma:FriendMessage:1234567"
+  },
+  "candidate_limit": {
+    "description": "每次拉取多少条候选",
+    "type": "int",
+    "default": 20
+  },
+  "cli_python": {
+    "description": "xiaoheihe-cli 的 Python 解释器",
+    "type": "string",
+    "default": "",
+    "hint": "填写 xiaoheihe-cli 虚拟环境里的 python 绝对路径"
+  },
+  "cli_script": {
+    "description": "xiaoheihe-cli 入口脚本",
+    "type": "string",
+    "default": "",
+    "hint": "填写 xiaoheihe-cli 的 cli.py 绝对路径"
+  },
+  "provider_id": {
+    "description": "生成点评用的模型（留空用当前默认）",
+    "type": "string",
+    "default": "deepseek_source/deepseek-flash"
+  },
+  "topic_blocklist": {
+    "description": "不想看到的社区/话题关键词（命中即跳过）",
+    "type": "list",
+    "default": [
+      "抽奖",
+      "广告",
+      "代练",
+      "出售账号"
+    ]
+  }
+}
